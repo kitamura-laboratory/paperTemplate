@@ -1,0 +1,61 @@
+%% This is file `nitkagawaprocas.cls',
+%% produced by Daichi Kitamura.
+%% This is a cls file for producing graduate proceedings 
+%% at Advanced Course, National Institute of Technology, Kagawa College.
+%%
+
+% 垂直方向のマージン設定
+\setlength{\textheight}{252truemm} % 本文の高さ
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{20truemm} % トップマージン (252 + 20 + x = 297mm, x = 25mm)
+\setlength{\footskip}{10truemm} % 本文の下橋からページ番号の下端までの高さ
+\addtolength{\topmargin}{-1truein}
+
+% 水平方向のマージン設定
+\setlength{\textwidth}{160truemm} % 本文の幅
+\setlength{\oddsidemargin}{25truemm} % レフトマージン (170 + 20 + x = 210mm, x = 20mm)
+\addtolength{\oddsidemargin}{-1truein}
+
+% セクションのフォント設定
+\renewcommand{\section}{\@startsection {section}{1}{\z@}{-3.5ex plus -1ex minus -.2ex}{1.5ex plus .2ex}{\fontsize{11pt}{0pt}\bf}}
+% サブセクションのフォント設定
+\renewcommand{\subsection}{\@startsection {subsection}{1}{\z@}{-3.25ex plus -1ex minus -.2ex}{1.0ex plus .2ex}{\fontsize{10pt}{0pt}\bf}}
+% サブサブセクションのフォント設定
+\renewcommand{\subsection}{\@startsection {subsection}{1}{\z@}{-3.25ex plus -1ex minus -.2ex}{1.0ex plus .2ex}{\fontsize{10pt}{0pt}\bf}}
+
+% ハイフン付きページ番号のスタイル(hyphenpage)の定義
+\def\ps@hyphenpage{%
+	\let\ps@plain\ps@plain
+	\let\@mkboth\@gobbletwo
+	\long\def\@oddfoot{\hfil-\ \thepage\ -\hfil}%
+	\let\@evenfoot\@oddfoot%
+}
+
+% デフォルトではページ番号を非表示
+\pagestyle{empty}
+\thispagestyle{empty}
+
+% maketitleのスタイル
+\def\@maketitle{\newpage
+\begin{center}
+%\centering
+	\vskip 2.4em% トップマージンからタイトルまでの余白
+	{\fontsize{21pt}{11truemm}\bf\@title\par}% タイトル
+	\vskip 2.0em% タイトルから氏名までの余白
+	{\large%
+	\begin{tabular}[t]{ccc}%
+		\@affiliation & \@author & {\small(\@eauthor)}% 所属 氏名 (英語氏名)
+	\end{tabular}\par}%
+	\vskip 2.0em% 氏名から本文までの余白
+\end{center}%
+}
+
+% affiliationとeauthorの定義
+\long\def\affiliation#1{\long\gdef\@affiliation{#1}}
+\long\def\eauthor#1{\long\gdef\@eauthor{#1}}
+
+% 二段組み
+\twocolumn
+
+% 本文最初の段落一字下げ無しを解除
+\usepackage{indentfirst}
