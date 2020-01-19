@@ -35,16 +35,23 @@
 \pagestyle{empty}
 \thispagestyle{empty}
 
+% setspaceパッケージのインクルード（タイトルの行間調整のspacing用）
+\usepackage{setspace} 
+
+% 本文最初の段落一字下げ無しを解除
+\usepackage{indentfirst}
+
 % maketitleのスタイル
 \def\@maketitle{\newpage
 \begin{center}
 %\centering
-	\vskip 1.2em% トップマージンからタイトルまでの余白
-	{\LARGE\bf\@title\par}% タイトル
-	\vskip 2.8em% タイトルから英語タイトルまでの余白
+	\vskip 1.1em% トップマージンからタイトルまでの余白
+	{\vbox to4zw{\hsize49.3zw {\begin{spacing}{0.85}\LARGE\bf\@title\end{spacing}}\vfil}} % 1行でも2行でも英語タイトルまでの余白が同じになるように\vboxと\vfilを使ってタイトルを定義
+	\vskip 0.5em% タイトルから英語タイトルまでの余白
 	{\large\@etitle\par}
-	\vskip 1.6em% 英語タイトルから氏名までの余白
+	\vskip 1.6em% 英語タイトルから日本語氏名までの余白
 	{\large\@author\par}
+	\vskip 0.1em% 日本語氏名から英語氏名までの余白
 	{\normalsize\@eauthor\par}
 	\vskip 2.0em% 英語氏名から本文までの余白
 \end{center}%
@@ -56,6 +63,3 @@
 
 % 二段組み
 \twocolumn
-
-% 本文最初の段落一字下げ無しを解除
-\usepackage{indentfirst}
