@@ -138,7 +138,7 @@
     \gdef\@belongsto{Department of Electrical and Computer Engineering\\%
         National Institute of Technology, Kagawa College}%
   \else
-    \gdef\@subtitle{卒業論文}
+    \gdef\@subtitle{卒業研究論文}
     \gdef\@belongsto{香川高等専門学校電気情報工学科}%
   \fi
 \else
@@ -152,7 +152,7 @@
   \if@english
     \gdef\@subtitle{Bachelor's~Thesis}
   \else
-    \gdef\@subtitle{特別論文}
+    \gdef\@subtitle{特別研究論文}
   \fi
 \fi
 \renewcommand{\maketitle}{%
