@@ -164,6 +164,7 @@
     \begin{center}
       \includegraphics[width=7cm]{logo.pdf} \\
       {\headfont\Large \@subtitle \par}
+      {\headfont\Large 論文題目 \par}
     \end{center}%
     \begin{center}\headfont\Huge%
       \parbox{\title@width}{\begin{center}\@title\end{center}}%
