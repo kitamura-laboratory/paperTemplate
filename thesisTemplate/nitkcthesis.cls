@@ -131,7 +131,6 @@
 \newcommand*{\eauthor}[1]{\gdef\@eauthor{#1}}% #1: 著者名英語つづり
 \newcommand*{\email}[1]{\gdef\authors@email{#1}}% #1: e-mail アドレス
 \newcommand*{\keywords}[1]{\gdef\@keywords{#1}}% #1: キーワード
-\gdef\@keywordsprefix{\if@english Keywords\else キーワード\fi}
 \if@undergraduate
   \if@english
     \gdef\@subtitle{Graduation~Thesis}
@@ -139,7 +138,8 @@
         National Institute of Technology, Kagawa College}%
   \else
     \gdef\@subtitle{卒業研究論文}
-    \gdef\@belongsto{香川高等専門学校電気情報工学科}%
+    \gdef\@belongsto{Department of Electrical and Computer Engineering\\%
+        National Institute of Technology, Kagawa College}%
   \fi
 \else
   \if@english
@@ -201,9 +201,7 @@
   \global\let\logo\relax
   \global\let\title\relax
   \global\let\supervisor\relax
-  \global\let\belongto\relax
   \global\let\email\relax
-  \global\let\eauthor\relax
   \global\let\author\relax
   \global\let\date\relax
   \global\let\and\relax
@@ -300,50 +298,48 @@
     {0.5\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
     {-1zw}% 改行せず 1zw のアキ
     {\normalfont\normalsize\headfont}}
-\newcommand{\abstractname}{\if@english Abstract\else 概要\fi}
-\renewenvironment{abstract}{%
-  \titlepage
-  \null\vfill
-  \@beginparpenalty\@lowpenalty
-  \begin{center}%
-    \headfont \abstractname
-    \@endparpenalty\@M
-  \end{center}\par}%
-  {\par%
-    \ifx\@keywords\@undefined\else%
-      \vskip2\baselineskip
-      \begin{description}%
-        \item[\@keywordsprefix]\@keywords%
-      \end{description}%
-    \fi%
-    \vfill\vfill\vfill\null
-    \endtitlepage}
+\newcommand{\abstractname}{\if@english {\bf Abstract}\else （和訳）\fi}
 %%%
-\newcommand{\eabstractname}{\if@english 概要 \else Abstract\fi}
+\newcommand{\eabstractname}{\if@english （和訳） \else {\bf Abstract}\fi}
 \newcommand*{\etitle}[1]{\gdef\@etitle{#1}}
-\newenvironment{eabstract}{%
-  \titlepage
+\newcommand*{\eabstract}[1]{\gdef\@eabstract{#1}}
+\renewcommand*{\abstract}[1]{\gdef\@abstract{#1}}
+\newcommand{\makeabstract}{
+  \begin{titlepage}
   \null
   \@beginparpenalty\@lowpenalty
   \begin{center}
-      \begin{center}\headfont\Large%
-    \@etitle
+    \begin{center}\headfont\Large%
+      {\bf \@etitle}
+    \end{center}
+    \begin{center}\headfont\Large
+      {\rm \@eauthor}
+    \end{center}
+    \begin{center}\headfont\normalsize
+      {\rm \@belongsto}
     \end{center}
   \end{center}
-      \vskip2\baselineskip
+      \vskip1\baselineskip
   \begin{center}%
     \headfont \eabstractname
     \@endparpenalty\@M
-  \end{center}\par}%
-  {\par%
+  \end{center}\par%
+  \@eabstract
+  \par%
     \ifx\@keywords\@undefined\else%
-      \vskip2\baselineskip
+      \vskip1\baselineskip
       \begin{description}%
-        \item[\@keywordsprefix]\@keywords%
+        \item[{\bf \textit{Keywords:}}]\@keywords%
       \end{description}%
     \fi%
-    \vfill\vfill\vfill\null
-    \endtitlepage}
+      \vskip2\baselineskip
+  \begin{center}%
+    \headfont \abstractname
+    \@endparpenalty\@M
+  \end{center}\par%
+  \@abstract
+  \end{titlepage}
+}
 %%%
 \renewenvironment{thebibliography}[1]{%
   \global\let\presectionname\relax
