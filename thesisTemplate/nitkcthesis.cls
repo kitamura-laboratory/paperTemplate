@@ -169,7 +169,7 @@
     \begin{center}\headfont\Large%
       \parbox{\title@width}{\begin{center}\@title\end{center}}%
     \end{center}
-    \vskip 2cm
+    \vskip 1.5cm
     \begin{center}
       \normalsize\headfont
       \renewcommand{\arraystretch}{1.6}
@@ -188,28 +188,9 @@
       {\headfont\Huge 香川高等専門学校}
     \end{center}
     \vfill
-    %\begin{center}
-    % \Large\headfont
-    %  {\begin{tabular}[t]{c}%
-    %    {\LARGE\@author} \\[16\p@]
-    %    \@supervisor@prefix \ \@supervisor
-    %  \end{tabular}\par}%
-    % \vskip 2cm
-    %  {\@date\par}%
-    %  \vskip 2cm
-    %  {\@belongsto \par}%
-    %\end{center}\par
-    %\@thanks%
-    %\vskip60\p@\null
-    %\newpage\clearpage
     \thispagestyle{empty}
     \setcounter{page}{0}
-    \null\vfill
-    %\begin{flushleft}
-   %   Copyright {\copyright} {\number\year},~%
-  %\ifx\@eauthor\@undefined \@author\else\@eauthor\fi.
-    %\end{flushleft}\par
-    %\vskip60\p@\null
+    %\null\vfill
   \end{titlepage}
   \setcounter{footnote}{0}%
   \global\let\maketitle\relax
