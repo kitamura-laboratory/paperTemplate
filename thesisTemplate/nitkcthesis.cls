@@ -160,20 +160,25 @@
   \global\let\@thanks\@empty
   \begin{titlepage}%
     \let\footnote\relax
+    \setlength{\topmargin}{-2cm}
+    \addtolength{\textheight}{10cm}
     \begin{center}
       \includegraphics[width=7cm]{logo.pdf} \\
-      {\headfont\Huge \@subtitle \par}
+    \end{center}
+    \begin{center}
+      {\headfont\fontsize{30pt}{0pt}\selectfont \@subtitle \par}
       \vskip 2cm
       {\headfont\Large 論文題目 \par}
+      \vskip 0.7cm
     \end{center}%
     \begin{center}\headfont\Large%
       \parbox{\title@width}{\begin{center}\@title\end{center}}%
     \end{center}
-    \vskip 1.5cm
+    \vskip 2cm
     \begin{center}
       \normalsize\headfont
       \renewcommand{\arraystretch}{1.6}
-        {\begin{tabular}{|p{5cm}|p{7cm}p{1cm}|}
+        {\begin{tabular}{|p{5cm}|p{6cm}p{1cm}|}
           \hline
           \multicolumn{1}{|c|}{提出年月日} & \multicolumn{2}{c|}{\@date} \\ \hline
           \multicolumn{1}{|c|}{学　　　　　　科} & \multicolumn{2}{c|}{電気情報工学科} \\ \hline
@@ -305,6 +310,7 @@
 \newcommand*{\eabstract}[1]{\gdef\@eabstract{#1}}
 \renewcommand*{\abstract}[1]{\gdef\@abstract{#1}}
 \newcommand{\makeabstract}{
+  \setlength{\topmargin}{-2cm}
   \begin{titlepage}
   \null
   \@beginparpenalty\@lowpenalty
@@ -339,6 +345,7 @@
   \end{center}\par%
   \@abstract
   \end{titlepage}
+  \setlength{\topmargin}{0cm}
 }
 %%%
 \renewenvironment{thebibliography}[1]{%
