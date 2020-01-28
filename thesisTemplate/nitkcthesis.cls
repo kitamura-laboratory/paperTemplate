@@ -160,13 +160,13 @@
   \global\let\@thanks\@empty
   \begin{titlepage}%
     \let\footnote\relax
-    \null\vskip60\p@
     \begin{center}
       \includegraphics[width=7cm]{logo.pdf} \\
-      {\headfont\Large \@subtitle \par}
+      {\headfont\Huge \@subtitle \par}
+      \vskip 2cm
       {\headfont\Large 論文題目 \par}
     \end{center}%
-    \begin{center}\headfont\Huge%
+    \begin{center}\headfont\Large%
       \parbox{\title@width}{\begin{center}\@title\end{center}}%
     \end{center}
     %\vfill
@@ -328,7 +328,7 @@
   \@beginparpenalty\@lowpenalty
   \begin{center}
       \begin{center}\headfont\Large%
-	  \@etitle
+    \@etitle
     \end{center}
   \end{center}
       \vskip2\baselineskip
