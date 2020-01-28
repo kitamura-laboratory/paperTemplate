@@ -162,6 +162,7 @@
     \let\footnote\relax
     \null\vskip60\p@
     \begin{center}
+      \includegraphics[width=7cm]{logo.pdf} \\
       {\headfont\Large \@subtitle \par}
     \end{center}%
     \begin{center}\headfont\Huge%
@@ -197,6 +198,7 @@
   \global\let\@date\@empty
   \global\let\@title\@empty
   \global\let\subtitle\relax
+  \global\let\logo\relax
   \global\let\title\relax
   \global\let\supervisor\relax
   \global\let\belongto\relax

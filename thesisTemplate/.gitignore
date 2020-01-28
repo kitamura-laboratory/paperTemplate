@@ -6,3 +6,5 @@
 *.pdf
 *.synctex.gz
 *.toc
+*.pdf
+!logo.pdf
