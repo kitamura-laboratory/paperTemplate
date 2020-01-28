@@ -169,7 +169,25 @@
     \begin{center}\headfont\Large%
       \parbox{\title@width}{\begin{center}\@title\end{center}}%
     \end{center}
-    %\vfill
+    \vskip 2cm
+    \begin{center}
+      \normalsize\headfont
+      \renewcommand{\arraystretch}{1.6}
+        {\begin{tabular}{|p{5cm}|p{7cm}p{1cm}|}
+          \hline
+          \multicolumn{1}{|c|}{提出年月日} & \multicolumn{2}{c|}{\@date} \\ \hline
+          \multicolumn{1}{|c|}{学　　　　　　科} & \multicolumn{2}{c|}{電気情報工学科} \\ \hline
+          \multicolumn{1}{|c|}{氏　　　　　　名} & \multicolumn{1}{c}{ \@author } & 印\\ \hline
+          \multicolumn{1}{|c|}{指導教員（主査）} & \multicolumn{1}{c}{ \@supervisor } & 印\\ \hline
+          \multicolumn{1}{|c|}{副　　　　　　査} & & 印\\ \hline
+          \multicolumn{1}{|c|}{学　　 科 　　長} & & 印\\ \hline
+        \end{tabular}}
+      \vskip 2cm
+    \end{center}
+    \begin{center}
+      {\headfont\Huge 香川高等専門学校}
+    \end{center}
+    \vfill
     %\begin{center}
     % \Large\headfont
     %  {\begin{tabular}[t]{c}%
@@ -184,9 +202,9 @@
     %\@thanks%
     %\vskip60\p@\null
     %\newpage\clearpage
-    %\thispagestyle{empty}
-    %\setcounter{page}{0}
-    %\null\vfill
+    \thispagestyle{empty}
+    \setcounter{page}{0}
+    \null\vfill
     %\begin{flushleft}
    %   Copyright {\copyright} {\number\year},~%
   %\ifx\@eauthor\@undefined \@author\else\@eauthor\fi.
