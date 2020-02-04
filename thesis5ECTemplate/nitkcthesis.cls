@@ -217,7 +217,7 @@
     \clearpage
   \fi
   \@mainmatterfalse
-  \pagenumbering{roman}}
+  \pagenumbering{empty}}
 \renewcommand\mainmatter{%
   \if@twoside
     \cleardoublepage
