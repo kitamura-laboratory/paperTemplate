@@ -344,7 +344,46 @@
   \end{center}\par%
   \@abstract
   \end{titlepage}
-  \setlength{\topmargin}{0cm}
+}
+\newcommand{\makeseparatedabstract}{
+  \setlength{\topmargin}{-2cm}
+  \begin{titlepage}
+  \null
+  \@beginparpenalty\@lowpenalty
+  \begin{center}
+    \begin{center}\headfont\Large%
+      {\bf \@etitle}
+    \end{center}
+    \begin{center}\headfont\Large
+      {\rm \@eauthor}
+    \end{center}
+    \begin{center}\headfont\normalsize
+      {\rm \@belongsto}
+    \end{center}
+  \end{center}
+      \vskip1\baselineskip
+  \begin{center}%
+    \headfont \eabstractname
+    \@endparpenalty\@M
+  \end{center}\par%
+  \@eabstract
+  \par%
+    \ifx\@keywords\@undefined\else%
+      \vskip1\baselineskip
+      \begin{description}%
+        \item[{\bf \textit{Keywords:}}]\@keywords%
+      \end{description}%
+    \fi%
+      \vskip2\baselineskip
+    \newpage
+    \thispagestyle{empty}
+    \addtolength{\topmargin}{2cm}
+    \begin{center}%
+      \headfont \abstractname
+      \@endparpenalty\@M
+    \end{center}\par%
+    \@abstract
+  \end{titlepage}
 }
 %%%
 \renewenvironment{thebibliography}[1]{%
