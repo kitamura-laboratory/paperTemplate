@@ -167,7 +167,7 @@
     \begin{center}
       {\headfont\fontsize{30pt}{0pt}\selectfont \@subtitle \par}
       \vskip 2cm
-      {\headfont\Large 論文題目 \par}
+      {\headfont\fontsize{16pt}{0pt}\selectfont 論文題目 \par}
       \vskip 0.7cm
     \end{center}%
     \begin{center}\headfont\Large%
