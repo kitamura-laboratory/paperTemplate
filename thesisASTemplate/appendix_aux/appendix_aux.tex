@@ -1,0 +1,28 @@
+\chapter{補助関数法で利用される不等式}
+\label{chap:ineq}
+
+%----------------------------------------------
+\section{接線不等式}
+%----------------------------------------------
+
+\begin{lemm} \label{lem:aux:sessen} （接線不等式）
+  $f(x)$が凹関数であるとき，以下の不等式が成立する．
+  \begin{align}
+    f(x) \leq f'(\bar{x}) (x - \bar{x}) + f(\bar{x})
+  \end{align}
+  不等式中の等号が成立するための条件は$x = \bar{x}$である．
+\end{lemm}
+
+%----------------------------------------------
+\section{Jensenの不等式}
+%----------------------------------------------
+
+\begin{lemm} \label{lem:aux:jensen} （Jensenの不等式）
+$\alpha_{i} > 0$を，$\sum_{i} \alpha_{i} = 1$を満たす補助変数とする．
+関数$f(x)$が凸関数であるとき，$x_{i}\ (i = 1,\ldots,I)$に対して以下の不等式が成立する．
+\begin{align}
+  f \left( \sum_{i=1}^{I} \alpha_{i} x_{i} \right) \leq \sum_{i=1}^{I} \alpha_{i} f(x_{i})
+\end{align}
+$f(x)$が狭義凸関数であるとき，不等式中の等号が成立するための条件は
+$x_1 = \cdots = x_i = \cdots = x_I$である．
+\end{lemm}
