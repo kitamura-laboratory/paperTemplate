@@ -1,0 +1,134 @@
+%#!pdfpLaTeX
+%
+% 北村研究室用卒業論文・特別論文のTeXテンプレートファイル
+% 本ファイルは非公式であり，表紙とアブストに関しては下記で公開されているワードの
+% テンプレートを利用して作成したものが公式であるので，表紙とアブストはPDFにして
+% 差し替えること．
+% https://www.kagawa-nct.ac.jp/EE/local/index.html （学内限定アクセス）
+%
+% 2020年1月17日 北村大地作成
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 論文情報 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% テンプレート選択 %%%%%
+\documentclass[honka]{nitkcthesis}%卒論（本科5年）日本語用
+%\documentclass[honka,english]{nitkcthesis}%卒論（本科5年）英語用
+%\documentclass[senkouka]{nitkcthesis}%特論（専攻科2年）日本語用
+%\documentclass[senkouka,english]{nitkcthesis}%特論（専攻科2年）英語用
+
+%%%%% タイトル %%%%%
+\title{\underline{北村研究室用}\\\underline{卒業論文テンプレートファイル}}
+%\titlewidth{}% タイトル幅 (指定するときは単位つきで)
+
+%%%%% 著者 %%%%%
+\author{高専 太郎}
+\eauthor{Taro Kosen}% Copyright表示で使われる
+
+%%%%% 指導教員名 %%%%%
+\supervisor{北村 大地 助教}% 1つ引数をとる (役職まで含めて書く)
+
+%%%%% 提出年月 %%%%%
+\date{令和2年 2月 4日}
+
+%%%%% \usepackage等のプリアンブル宣言（macros.texに記載） %%%%%
+\input{macros.tex}
+
+\begin{document}
+\bstctlcite{IEEEexample:BSTcontrol} % BibTeXのIEEEtranで同一著者の横線表示を防止
+
+\maketitle% タイトル生成
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 前文 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+%%%%% English title %%%%%
+\etitle{Template File of Graduate Thesis Produced Only for Kitamura Laboratory}
+
+%%%%% Abstract %%%%%
+\eabstract{
+English abstract goes here. English abstract goes here. English abstract goes here. English abstract goes here. 
+English abstract goes here. English abstract goes here. English abstract goes here. English abstract goes here. 
+English abstract goes here. English abstract goes here. English abstract goes here. English abstract goes here. 
+English abstract goes here. English abstract goes here. English abstract goes here. English abstract goes here. 
+English abstract goes here. English abstract goes here. English abstract goes here. English abstract goes here. 
+English abstract goes here. English abstract goes here. English abstract goes here. English abstract goes here. 
+English abstract goes here. English abstract goes here. English abstract goes here. English abstract goes here. 
+English abstract goes here. English abstract goes here. English abstract goes here. English abstract goes here.  
+}
+
+%%%%% 概要 %%%%%
+\abstract{
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．
+日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述．日本語の概要をここに記述
+}
+
+\keywords{Keyword1, Keyword2, Keyword3}
+
+\makeseparatedabstract
+%\makeabstract
+%%%%% 目次 %%%%%
+%\tableofcontents % ページ番号を削除しない目次
+%----- ページ番号を削除した目次 -----%
+{\makeatletter
+\let\ps@jpl@in\ps@empty
+\makeatother
+\pagestyle{empty}
+\tableofcontents
+\clearpage}
+%---------------------------------%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 本文 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+%%%%% 第1章 %%%%%
+\input{ch_intro/ch_intro.tex}
+
+%%%%% 第2章 %%%%%
+\input{ch_conventional/ch_conventional.tex}
+
+%%%%% 第3章 %%%%%
+\input{ch_conclusion/ch_conclusion.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 後付 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+%%%%% 謝辞 %%%%%
+\input{acknowledgment/acknowledgment.tex}
+
+%%%%% 参考文献（直接書く場合） %%%%%
+\begin{thebibliography}{99}
+  \bibitem{Kitamura2016taslp}
+    D.~Kitamura, N.~Ono, H.~Sawada, H.~Kameoka, and H.~Saruwatari, 
+    ``Determined blind source separation unifying independent vector analysis and nonnegative matrix factorization,''
+    \emph{IEEE/ACM Transactions on Audio, Speech, and Language Processing}, vol. 24, no. 9, pp. 1626--1641, 2016.
+
+  \bibitem{Kitamura2016IWAENC}
+    D.~Kitamura, N.~Ono, H.~Saruwatari, Y.~Takahashi, and K. Kondo, 
+    ``Discriminative and reconstructive basis training for audio source separation with semi-supervised nonnegative matrix factorization,''
+    \emph{in Proceedings of International Workshop on Acoustic Signal Enhancement}, 2016, pp. 1--5.
+\end{thebibliography}
+
+%%%%% 参考文献（BibTeXを使う場合） %%%%%
+% \bibliography{ref_abb_full,references}
+
+%%%%% 発表文献一覧 %%%%%
+\input{publication/publication.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 付録 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+
+%%%%% 付録A %%%%%
+\input{appendix_aux/appendix_aux.tex}
+
+\end{document}
