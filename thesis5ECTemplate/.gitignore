@@ -8,3 +8,4 @@
 *.toc
 *.pdf
 !logo.pdf
+!ch_intro/sample.pdf
