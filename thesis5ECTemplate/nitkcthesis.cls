@@ -161,7 +161,6 @@
   \begin{titlepage}%
     \let\footnote\relax
     \setlength{\topmargin}{-2cm}
-    \addtolength{\textheight}{10cm}
     \begin{center}
       \includegraphics[width=7cm]{logo.pdf} \\
     \end{center}
@@ -187,12 +186,12 @@
           \multicolumn{1}{|c|}{副　　　　　　査} & & 印\\ \hline
           \multicolumn{1}{|c|}{学　　 科 　　長} & & 印\\ \hline
         \end{tabular}}
-      \vskip 2cm
     \end{center}
     \begin{center}
+      \vskip 1.1cm
       {\headfont\Huge 香川高等専門学校}
+      \vfill
     \end{center}
-    \vfill
     \thispagestyle{empty}
     \setcounter{page}{0}
     %\null\vfill
