@@ -127,6 +127,10 @@
 \renewcommand{\and}{\\ &}
 \newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}% #1: 指導教員名 + 役職 [2005/12/09]
 \gdef\@supervisor@prefix{\if@english Supervisor\else 指導教員\fi}
+\newcommand*{\reviewer}[1]{\gdef\@reviewer{#1}}% #1: 指導教員名 + 役職
+\gdef\@reviewer@prefix{\if@english Reviewer\else 副査\fi}
+\newcommand*{\chairperson}[1]{\gdef\@chairperson{#1}}% #1: 指導教員名 + 役職
+\gdef\@chairperson@prefix{\if@english Chair Person\else 学科長\fi}
 \newcommand*{\handin}[2]{\year #1 \month #2 \day 0}% #1: 年, #2: 月
 \newcommand*{\eauthor}[1]{\gdef\@eauthor{#1}}% #1: 著者名英語つづり
 \newcommand*{\email}[1]{\gdef\authors@email{#1}}% #1: e-mail アドレス
@@ -177,14 +181,14 @@
     \begin{center}
       \normalsize\headfont
       \renewcommand{\arraystretch}{1.6}
-        {\begin{tabular}{|p{5cm}|p{6cm}p{1cm}|}
+        {\begin{tabular}{|wc{5cm}|wc{6cm}wc{1cm}|}
           \hline
           \multicolumn{1}{|c|}{提出年月日} & \multicolumn{2}{c|}{\@date} \\ \hline
           \multicolumn{1}{|c|}{学　　　　　　科} & \multicolumn{2}{c|}{電気情報工学科} \\ \hline
-          \multicolumn{1}{|c|}{氏　　　　　　名} & \multicolumn{1}{c}{ \@author } & 印\\ \hline
-          \multicolumn{1}{|c|}{指導教員（主査）} & \multicolumn{1}{c}{ \@supervisor } & 印\\ \hline
-          \multicolumn{1}{|c|}{副　　　　　　査} & & 印\\ \hline
-          \multicolumn{1}{|c|}{学　　 科 　　長} & & 印\\ \hline
+          \multicolumn{1}{|c|}{氏　　　　　　名} & \@author & 印\\ \hline
+          \multicolumn{1}{|c|}{指導教員（主査）} & \@supervisor & 印\\ \hline
+          \multicolumn{1}{|c|}{副　　　　　　査} & \@reviewer & 印\\ \hline
+          \multicolumn{1}{|c|}{学　　 科 　　長} & \@chairperson & 印\\ \hline
         \end{tabular}}
     \end{center}
     \begin{center}
@@ -205,6 +209,8 @@
   \global\let\logo\relax
   \global\let\title\relax
   \global\let\supervisor\relax
+  \global\let\reviewer\relax
+  \global\let\chairperson\relax
   \global\let\email\relax
   \global\let\author\relax
   \global\let\date\relax
