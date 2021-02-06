@@ -28,7 +28,7 @@
 \supervisor{北村 大地 助教}% 1つ引数をとる (役職まで含めて書く)
 
 %%%%% 提出年月 %%%%%
-\date{令和2年 2月 4日}
+\date{令和X年X月X日}
 
 %%%%% \usepackage等のプリアンブル宣言（macros.texに記載） %%%%%
 \input{macros.tex}
@@ -77,13 +77,15 @@ English abstract goes here. English abstract goes here. English abstract goes he
 
 \makeseparatedabstract
 %\makeabstract
+
 %%%%% 目次 %%%%%
-%\tableofcontents % ページ番号を削除しない目次
+% \setcounter{tocdepth}{3} \tableofcontents % ページ番号を削除しない目次
 %----- ページ番号を削除した目次 -----%
 {\makeatletter
 \let\ps@jpl@in\ps@empty
 \makeatother
 \pagestyle{empty}
+\setcounter{tocdepth}{3}
 \tableofcontents
 \clearpage}
 %---------------------------------%
@@ -107,6 +109,7 @@ English abstract goes here. English abstract goes here. English abstract goes he
 \input{acknowledgment/acknowledgment.tex}
 
 %%%%% 参考文献（直接書く場合） %%%%%
+\addcontentsline{toc}{chapter}{\bibname} % 参考文献を目次に表示
 \begin{thebibliography}{99}
   \bibitem{Kitamura2016taslp}
     D.~Kitamura, N.~Ono, H.~Sawada, H.~Kameoka, and H.~Saruwatari, 
@@ -120,6 +123,7 @@ English abstract goes here. English abstract goes here. English abstract goes he
 \end{thebibliography}
 
 %%%%% 参考文献（BibTeXを使う場合） %%%%%
+% \addcontentsline{toc}{chapter}{\bibname} % 参考文献を目次に表示
 % \bibliography{ref_abb_full,references}
 
 %%%%% 発表文献一覧 %%%%%
