@@ -338,12 +338,10 @@
   \@eabstract
   \par%
     \ifx\@keywords\@undefined\else%
-      \vskip1\baselineskip
       \begin{description}%
         \item[{\bf \textit{Keywords:}}]\@keywords%
       \end{description}%
     \fi%
-      \vskip2\baselineskip
   \begin{center}%
     \headfont \abstractname
     \@endparpenalty\@M
@@ -375,12 +373,10 @@
   \@eabstract
   \par%
     \ifx\@keywords\@undefined\else%
-      \vskip1\baselineskip
       \begin{description}%
         \item[{\bf \textit{Keywords:}}]\@keywords%
       \end{description}%
     \fi%
-      \vskip2\baselineskip
     \newpage
     \thispagestyle{empty}
     \addtolength{\topmargin}{2cm}

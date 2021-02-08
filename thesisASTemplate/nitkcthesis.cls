@@ -309,7 +309,6 @@
   \end{center}\par}%
   {\par%
     \ifx\@keywords\@undefined\else%
-      \vskip2\baselineskip
       \begin{description}%
         \item[\@keywordsprefix]\@keywords%
       \end{description}%
@@ -335,7 +334,6 @@
   \end{center}\par}%
   {\par%
     \ifx\@keywords\@undefined\else%
-      \vskip2\baselineskip
       \begin{description}%
         \item[\@keywordsprefix]\@keywords%
       \end{description}%
