@@ -215,6 +215,8 @@
   \@mainmatterfalse
   \pagenumbering{roman}}
 \renewcommand\mainmatter{%
+  \setlength{\headsep}{10truemm}% 上部の余白確保
+  \setlength{\textheight}{229truemm}% 上部の余白確保
   \if@twoside
     \cleardoublepage
   \else
