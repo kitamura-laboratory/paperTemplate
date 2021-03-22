@@ -125,6 +125,7 @@
 \newcommand*{\titlewidth}[1]{\gdef\title@width{#1}}% #1: タイトル幅
 \gdef\title@width{\hsize}
 \renewcommand{\and}{\\ &}
+\newcommand*{\department}[1]{\gdef\@department{#1}}% #1: 学科名
 \newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}% #1: 指導教員名 + 役職 [2005/12/09]
 \gdef\@supervisor@prefix{\if@english Supervisor\else 指導教員\fi}
 \newcommand*{\reviewer}[1]{\gdef\@reviewer{#1}}% #1: 指導教員名 + 役職
@@ -184,7 +185,7 @@
         {\begin{tabular}{|wc{5cm}|wc{6cm}wc{1cm}|}
           \hline
           \multicolumn{1}{|c|}{提出年月日} & \multicolumn{2}{c|}{\@date} \\ \hline
-          \multicolumn{1}{|c|}{学　　　　　　科} & \multicolumn{2}{c|}{電気情報工学科} \\ \hline
+          \multicolumn{1}{|c|}{学　　　　　　科} & \multicolumn{2}{c|}{\@department} \\ \hline
           \multicolumn{1}{|c|}{氏　　　　　　名} & \@author & 印\\ \hline
           \multicolumn{1}{|c|}{指導教員（主査）} & \@supervisor & 印\\ \hline
           \multicolumn{1}{|c|}{副　　　　　　査} & \@reviewer & 印\\ \hline
