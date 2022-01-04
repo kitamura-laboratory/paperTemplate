@@ -410,4 +410,4 @@
 \raggedbottom
 \endinput
 %%
-%% End of file `nitkcthesis.cls'.
+%% End of file `nitkagawathesis.cls'.
