@@ -39,6 +39,9 @@
 \newif\if@undergraduate
 \DeclareOption{honka}{\@undergraduatetrue}
 \DeclareOption{senkouka}{\@undergraduatefalse}
+\newif\if@underreview
+\@underreviewfalse
+\DeclareOption{sadoku}{\@underreviewtrue}
 \ExecuteOptions{final,twoside,tocchaplong,mi,honka}
 \ProcessOptions
 \LoadClass[a4paper,onecolumn,titlepage,11pt
@@ -127,11 +130,15 @@
 \renewcommand{\and}{\\ &}
 \newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}% #1: 指導教員名 + 役職 [2005/12/09]
 \gdef\@supervisor@prefix{\if@english Supervisor\else 指導教員\fi}
+\newcommand*{\firstreviewer}[1]{\gdef\@firstreviewer{#1}}% #1: 指導教員名 + 役職
+\newcommand*{\secondreviewer}[1]{\gdef\@secondreviewer{#1}}% #1: 指導教員名 + 役職
+\gdef\@firstreviewer@prefix{\if@english Reviewer\else 副査\fi}
+\gdef\@secondreviewer@prefix{\if@english Reviewer\else 副査\fi}
+\newcommand*{\chairperson}[1]{\gdef\@chairperson{#1}}% #1: 指導教員名 + 役職
 \newcommand*{\handin}[2]{\year #1 \month #2 \day 0}% #1: 年, #2: 月
 \newcommand*{\eauthor}[1]{\gdef\@eauthor{#1}}% #1: 著者名英語つづり
 \newcommand*{\email}[1]{\gdef\authors@email{#1}}% #1: e-mail アドレス
 \newcommand*{\keywords}[1]{\gdef\@keywords{#1}}% #1: キーワード
-\gdef\@keywordsprefix{\if@english Keywords\else キーワード\fi}
 \if@undergraduate
   \if@english
     \gdef\@subtitle{Graduation~Thesis}
@@ -142,17 +149,23 @@
     \gdef\@belongsto{香川高等専門学校電気情報工学科}%
   \fi
 \else
+  \usepackage[deluxe]{otf} % 太字ゴシック用
   \if@english
     \gdef\@belongsto{Electrical and Computer Engineering Course\\%
         Advanced Course in Industrial and Systems Engineering\\%
         National Institute of Technology, Kagawa College}%
   \else
-    \gdef\@belongsto{香川高等専門学校専攻科電気情報工学コース}%
+    \gdef\@belongsto{香川高等専門学校\\専攻科\\創造工学専攻}%
   \fi
   \if@english
     \gdef\@subtitle{Bachelor's~Thesis}
   \else
-    \gdef\@subtitle{特別論文}
+    \gdef\@subtitle{特別研究論文}
+    \if@underreview
+      \gdef\@status{（予備審査用）}
+    \else
+      \gdef\@status{（査読済み）}
+    \fi
   \fi
 \fi
 \renewcommand{\maketitle}{%
@@ -160,25 +173,51 @@
   \global\let\@thanks\@empty
   \begin{titlepage}%
     \let\footnote\relax
-    \null\vskip60\p@
+    \null
+    \setlength{\topmargin}{-3pt}
     \begin{center}
-      {\headfont\Large \@subtitle \par}
+      % Word版と極力同じになるように調整（そこに美しさはない）
+      {\kanjiskip=.08zw plus.5pt minus.5pt \headfont \fontsize{27pt}{35pt}\selectfont \textgt{\textbf{\@subtitle}} \par}
+      {\kanjiskip=.08zw plus.5pt minus.5pt \headfont \fontsize{21pt}{38pt}\selectfont \textgt{\textbf{\@status}} \par}
     \end{center}%
-    \begin{center}\headfont\Huge%
-      \parbox{\title@width}{\begin{center}\@title\end{center}}%
-    \end{center}
-    \vfill
+    \vskip105\p@
     \begin{center}
-      \Large\headfont
-      {\begin{tabular}[t]{c}%
-        {\LARGE\@author} \\[16\p@]
-        \@supervisor@prefix \ \@supervisor
-      \end{tabular}\par}%
-      \vskip 2cm
-      {\@date\par}%
-      \vskip 2cm
-      {\@belongsto \par}%
-    \end{center}\par
+      {\kanjiskip=.1zw plus.5pt minus.5pt \headfont {\fontsize{13pt}{24pt}\selectfont 研　究　題　目} \par} 
+      \vskip41\p@
+      {\headfont \@title \par}
+      \vskip-10\p@
+      \hspace*{-1pt}\hrulefill
+    \end{center}
+    \vskip90\p@
+    \begin{center}
+    \normalsize\headfont
+    \renewcommand{\arraystretch}{1}
+      {
+        \kanjiskip=.1zw plus.5pt minus.5pt
+        \fontsize{11pt}{18pt}\selectfont
+        \begin{tabular}{|wc{1cm}|wc{6.5cm}}
+        \multicolumn{1}{c}{~提出年月日} & \@date \\ \hline
+        \multicolumn{1}{c}{~氏　　　名} & \@author \\ \hline
+        \multicolumn{1}{c}{~主　　　査} & \@supervisor \\ \hline
+        \multicolumn{1}{c}{~副　　　査} & \@firstreviewer \\ \hline
+        \multicolumn{1}{c}{~副　　　査} & \@secondreviewer \\ \hline
+      \end{tabular}}
+    \end{center}
+    \vskip14\p@
+    \begin{figure}[h]
+      \hspace{95pt}
+      \begin{minipage}[c]{0.5\hsize}
+        \Large\headfont
+        \centering
+        {\kanjiskip=.1zw plus.5pt minus.5pt \fontsize{16.5pt}{22pt}\selectfont \@belongsto}
+      \end{minipage}
+      \hspace{-20pt}
+      \begin{minipage}[c]{0.1\hsize}
+        \vskip-15\p@
+        \centering
+        \includegraphics[scale=0.15]{logo.pdf}
+      \end{minipage}
+    \end{figure}\par
     \@thanks%
     \vskip60\p@\null
     \newpage\clearpage
@@ -199,6 +238,8 @@
   \global\let\subtitle\relax
   \global\let\title\relax
   \global\let\supervisor\relax
+  \global\let\firstreviewer\relax
+  \global\let\secondreviewer\relax
   \global\let\belongto\relax
   \global\let\email\relax
   \global\let\eauthor\relax
