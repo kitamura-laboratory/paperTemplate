@@ -34,6 +34,9 @@
 %%%%% \usepackage等のプリアンブル宣言（macros.texに記載） %%%%%
 \input{macros.tex}
 
+\renewcommand{\figurename}{Fig.} % 図中の文字や図キャプションを日本語で書く場合はこの行をコメントアウト（原則英語とする）
+\renewcommand{\tablename}{Table} % 表中の文字や表キャプションを日本語で書く場合はこの行をコメントアウト（原則英語とする）
+
 \begin{document}
 \bstctlcite{IEEEexample:BSTcontrol} % BibTeXのIEEEtranで同一著者の横線表示を防止
 
