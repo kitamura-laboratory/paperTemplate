@@ -13,11 +13,12 @@
 %%%%% テンプレート選択 %%%%%
 %\documentclass[honka]{nitkagawathesis}%卒論（本科5年）日本語用
 %\documentclass[honka,english]{nitkagawathesis}%卒論（本科5年）英語用
-\documentclass[senkouka]{nitkagawathesis}%特論（専攻科2年）日本語用
+\documentclass[senkouka,sadoku]{nitkagawathesis}%特論（専攻科2年）日本語用，予備審査
+%\documentclass[senkouka]{nitkagawathesis}%特論（専攻科2年）日本語用，最終審査
 %\documentclass[senkouka,english]{nitkagawathesis}%特論（専攻科2年）英語用
 
 %%%%% タイトル %%%%%
-\title{北村研究室用\\特別論文テンプレートファイル}
+\title{北村研究室用特別論文テンプレートファイル}
 %\titlewidth{}% タイトル幅 (指定するときは単位つきで)
 
 %%%%% 著者 %%%%%
@@ -27,9 +28,12 @@
 %%%%% 指導教員名 %%%%%
 \supervisor{北村 大地 講師}% 1つ引数をとる (役職まで含めて書く)
 
+%%%%% 副査教員名 %%%%%
+\firstreviewer{高専 次郎 准教授}% 1つ引数をとる (役職まで含めて書く)
+\secondreviewer{高専 花子 准教授}% 1つ引数をとる (役職まで含めて書く)
+
 %%%%% 提出年月 %%%%%
-%\date{令和X年X月X日} % 和暦表示
-\handin{2020}{2} % 西暦表示
+\date{20XX年X月X日} % 西暦表示
 
 %%%%% \usepackage等のプリアンブル宣言（macros.texに記載） %%%%%
 \input{macros.tex}
