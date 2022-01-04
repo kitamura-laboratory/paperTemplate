@@ -447,7 +447,7 @@
       \number\month 月
       %\number\day 日
     \else
-      平成\number\heisei 年
+      令和\number\heisei 年
       \number\month 月
       %\number\day 日
     \fi
