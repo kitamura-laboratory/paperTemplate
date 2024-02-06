@@ -366,9 +366,8 @@
   \null
   \@beginparpenalty\@lowpenalty
   \begin{center}
-      \begin{center}\headfont\Large%
-	  \@etitle
-    \end{center}
+	\headfont\Large%
+	\@etitle
   \end{center}
       \vskip2\baselineskip
   \begin{center}%
